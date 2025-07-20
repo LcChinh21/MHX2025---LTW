@@ -1,11 +1,13 @@
+const prompt = require('prompt-sync')();
+// install prompt-sync de nhap tu ban phim
 var a = [];
 var n = prompt("Nhap so pham tu: ");
 n = parseInt(n);
-var max = 0;
+var max = Number.MIN_SAFE_INTEGER; 
 var b = [];
 
 for(let i = 0; i < n; i++){
-    var x = prompt();
+    let x = prompt("Nhap phan tu thu " + (i + 1) + ": ");
     a.push(Number(x));
     if(a[i] > max) max = a[i];
     if(a[i] > 0) b.push(a[i]);
@@ -19,6 +21,6 @@ for(let i = 0; i < n; i++){
 console.log("SO LON NHAT TRONG MANG: " + max);
 
 console.log("MANG MOI CHUA CAC SO > 0: ");
-for(let i = 0; i < b.size; i++){
+for(let i = 0; i < b.length; i++){
     console.log(b[i] + " ");
 }
